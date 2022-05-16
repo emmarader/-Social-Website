@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Map</title>
+    <style>
+        #map{
+            height:400px;
+            width:100%;
+        }
+    </style>
+    
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="styles.css">
+
+<style>
+    
+    table, th, td{
+        border: 1px solid black;
+    }
+    .center{
+    text-align: center;
+}
+
+
+</style>
+
+<body>
+    <h1>Google Map</h1>
+    <div id="map"></div>
+    <script>
+        function initMap(){
+            var options = {
+                zoom:12,
+                center:{lat:33.5779, lng:-101.8552}
+            }   
+          
+            var map = new google.maps.Map(document.getElementById('map'), options);
+
+            addMarker({
+                coords:{lat:33.584732738, lng:-101.870063027},
+                content:'<h1>Local Bar and Grill</h1>'
+            });
+            addMarker({
+                coords:{lat:33.58418, lng:-101.87012},
+                content:'<h1>Mesquites Bar and Grill</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5842, lng:-101.8697},
+                content:'<h1>Chimys</h1>'
+            });
+            addMarker({
+                coords:{lat:33.584718, lng:-101.86969},
+                content:'<h1>Crickets Draft House</h1>'
+            });
+            addMarker({
+                coords:{lat:33.58419, lng:-101.86073},
+                content:'<h1>BierHaus</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5839, lng:-101.8703},
+                content:'<h1>Bar PM</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5753, lng:-101.8447},
+                content:'<h1>Coho Nightclub</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5788, lng:-101.8447},
+                content:'<h1>Rewind</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5788, lng:-101.8438},
+                content:'<h1>The Garden</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5848, lng:-101.8601},
+                content:'<h1>Miguels</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5786942, lng:-101.8702357},
+                content:'<h1>Savage Tavern</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5338, lng:-101.9553},
+                content:'<h1>Little Woodrows</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5787, lng:-101.8446},
+                content:'<h1>Blue Light</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5937, lng:-101.8740},
+                content:'<h1>The Roof</h1>'
+            });
+            addMarker({
+                coords:{lat:33.586746, lng:-101.86881},
+                content:'<h1>Torchys</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5688306, lng:-101.9451139},
+                content:'<h1>Walk-Ons Sports Bistreaux</h1>'
+            });
+            addMarker({
+                coords:{lat:33.537065, lng:-101.923102},
+                content:'<h1>Bubbas 33</h1>'
+            });
+            addMarker({
+                coords:{lat:33.584236, lng:-101.870159},
+                content:'<h1>Raider Bar and Grill</h1>'
+            });
+            addMarker({
+                coords:{lat:33.579708, lng:-101.8454333},
+                content:'<h1>The Library Bar</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5848, lng:-101.8623},
+                content:'<h1>Fuzzys</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5853, lng:-101.8700},
+                content:'<h1>Bash Riprocks</h1>'
+            });
+            addMarker({
+                coords:{lat:33.58479, lng:-101.87017},
+                content:'<h1>Atomic</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5847, lng:-101.8481},
+                content:'<h1>The Brewery</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5792, lng:-101.8703},
+                content:'<h1>Skooners Grill and Bar</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5794, lng:-101.8453},
+                content:'<h1>Kongs</h1>'
+            });
+            addMarker({
+                coords:{lat:33.3348, lng:-101.5255},
+                content:'<h1>Lone Star Oyster Bar</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5627, lng:-101.889217},
+                content:'<h1>Caprock Cafe</h1>'
+            });
+            addMarker({
+                coords:{lat:33.58975, lng:-101.8679},
+                content:'<h1>Logies</h1>'
+            });
+            
+
+            function addMarker(props){
+                var marker = new google.maps.Marker({
+                    position:props.coords,
+                    map:map
+                });
+
+                if(props.content){
+                    var infoWindow = new google.maps.InfoWindow({
+                    content:props.content
+                });
+
+                marker.addListener('click', function(){
+                    infoWindow.open(map, marker);
+                });
+                } 
+            }          
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBSiPR_obaL5eJX3O7VwK_eIVgfsTyP9U&callback=initMap">
+    </script>
+</body>
+
+
+
+
+<body style = background-color:rgb(234,228,209);>
+
+  
+    
+    <h2 class = "center" > SOCIAL</h2>
+
+    
+
+<table style="width:100%; margin-left:auto;margin-right:auto">
+    <tr>
+        <th>Rank</th>
+        <th>Locations</th>
+        <th>Number of Check-Ins</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>The Local</td>
+    <td>checkins</td>
+  </tr>
+
+  <tr>
+    <td>2</td>
+    <td>Mesquite</td> 
+</tr>
+<tr>
+    <td>3</td>
+    <td>Chimy's</td>
+</tr>
+
+<tr>
+    <td>4</td>
+    <td>Crickets</td>
+</tr>
+
+<tr>
+    <td>5</td>
+    <td>Bierhaus</td>
+</tr>
+
+<tr>
+    <td>6</td>
+    <td>Bar PM</td>
+</tr>
+
+<tr>
+    <td>7</td>
+    <td>COHO</td>
+</tr>
+
+<tr>
+    <td>8</td>
+    <td>Rewind</td>
+</tr>
+
+<tr>
+    <td>9</td>
+    <td>The Garden</td>
+</tr>
+
+<tr>
+    <td>10</td>
+    <td>Miguel's</td>
+</tr>
+
+<tr>
+    <td>11</td>
+    <td>Savage Tavern</td>
+</tr>
+ 
+<tr>
+    <td>12</td>
+    <td>Woodrow's</td>
+</tr>
+    
+<tr>
+    <td>13</td>
+    <td>Blue Light</td>
+</tr> 
+
+<tr>
+    <td>14</td>
+    <td>The Roof</td>
+</tr>
+    
+<tr>
+    <td>15</td>
+    <td>Torchy's</td>
+</tr>
+
+<tr>
+    <td>16</td>
+    <td>Walk Ons</td>
+</tr>
+    
+
+<tr>
+    <td>17</td>
+    <td>Bubbas 33</td>
+</tr>
+
+<tr>
+    <td>18</td>
+    <td>Raider Bar</td>
+</tr>
+
+<tr>
+    <td>19</td>
+    <td>The Library</td>
+</tr>
+
+<tr>
+    <td>20</td>
+    <td>Fuzzy's</td>
+</tr>
+
+<tr>
+    <td>21</td>
+    <td>Bashes</td>
+</tr>
+    
+<tr>
+    <td>22</td>
+    <td>Atomic</td>
+</tr>
+
+<tr>
+    <td>23</td>
+    <td>The Brewery</td>
+</tr>
+
+<tr>
+    <td>24</td>
+    <td>Skooners</td>
+</tr>
+
+<tr>
+    <td>25</td>
+    <td>Kong's</td>
+</tr>
+
+<tr>
+    <td>26</td>
+    <td>Oyster Bar</td>
+</tr>
+
+<tr>
+    <td>27</td>
+    <td>Caprock</td>
+</tr>
+
+
+<tr>
+    <td>28</td>
+    <td>Logie's</td>
+
+</table>
+
+
+<script src="" async defer></script>
+ 
+</body>
+</html>
