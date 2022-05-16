@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang = "en">
+<body>
+
+<section>
+  <div class="centerh">
+    <h1>Social Hotspot</h1>
+  </div>
+  
+<div class="center">
+<form action="/action_page.php">
+  <label form="fname">Enter your state:</label>
+  <input type="text" id="fname" name="fname"><br><br>
+  <label form="lname">Enter your city:</label>
+  <input type="text" id="lname" name="lname"><br><br>
+
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" href="styles.css">
+
+    <script type="text/javascript">
+    function getTimeStamp() {
+           var now = new Date();
+           return ((now.getMonth() + 1) + '/' + (now.getDate()) + '/' + now.getFullYear() + " " + now.getHours() + ':'
+                         + ((now.getMinutes() < 10) ? ("0" + now.getMinutes()) : (now.getMinutes())) + ':' + ((now.getSeconds() < 10) ? ("0" + now
+                         .getSeconds()) : (now.getSeconds())));
+    }
+    function setTime() {
+        document.getElementById('field').value = getTimeStamp();
+    }
+    </script>
+        
+    
+    <body onload="setTime()" >
+    
+    
+    <input id="field" type="text" name="field" value="" size="11" />
+    <button type="button" onclick="setTime();">Get Time</button>
+    
+    </body>
+
+  <input type="submit" value="Submit">
+</form>
+
+
+
+</section>
+</body>
+</div>
+
+</html>
