@@ -1,26 +1,162 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="styles.css">
-        
-    </head>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Google Map</title>
+    <style>
+        #map{
+            height:400px;
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        function initMap(){
+            var options = {
+                zoom:12,
+                center:{lat:33.5779, lng:-101.8552}
+            }   
+          
+            var map = new google.maps.Map(document.getElementById('map'), options);
 
-    <!-- <body style="background-color:rgb(34, 37, 43);"> -->
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        
-    
-        <script src="" async defer></script>
-    </body>
+            addMarker({
+                coords:{lat:33.584732738, lng:-101.870063027},
+                content:'<h1>Local Bar and Grill</h1>'
+            });
+            addMarker({
+                coords:{lat:33.58418, lng:-101.87012},
+                content:'<h1>Mesquites Bar and Grill</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5842, lng:-101.8697},
+                content:'<h1>Chimys</h1>'
+            });
+            addMarker({
+                coords:{lat:33.584718, lng:-101.86969},
+                content:'<h1>Crickets Draft House</h1>'
+            });
+            addMarker({
+                coords:{lat:33.58419, lng:-101.86073},
+                content:'<h1>BierHaus</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5839, lng:-101.8703},
+                content:'<h1>Bar PM</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5753, lng:-101.8447},
+                content:'<h1>Coho Nightclub</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5788, lng:-101.8447},
+                content:'<h1>Rewind</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5788, lng:-101.8438},
+                content:'<h1>The Garden</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5848, lng:-101.8601},
+                content:'<h1>Miguels</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5786942, lng:-101.8702357},
+                content:'<h1>Savage Tavern</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5338, lng:-101.9553},
+                content:'<h1>Little Woodrows</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5787, lng:-101.8446},
+                content:'<h1>Blue Light</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5937, lng:-101.8740},
+                content:'<h1>The Roof</h1>'
+            });
+            addMarker({
+                coords:{lat:33.586746, lng:-101.86881},
+                content:'<h1>Torchys</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5688306, lng:-101.9451139},
+                content:'<h1>Walk-Ons Sports Bistreaux</h1>'
+            });
+            addMarker({
+                coords:{lat:33.537065, lng:-101.923102},
+                content:'<h1>Bubbas 33</h1>'
+            });
+            addMarker({
+                coords:{lat:33.584236, lng:-101.870159},
+                content:'<h1>Raider Bar and Grill</h1>'
+            });
+            addMarker({
+                coords:{lat:33.579708, lng:-101.8454333},
+                content:'<h1>The Library Bar</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5848, lng:-101.8623},
+                content:'<h1>Fuzzys</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5853, lng:-101.8700},
+                content:'<h1>Bash Riprocks</h1>'
+            });
+            addMarker({
+                coords:{lat:33.58479, lng:-101.87017},
+                content:'<h1>Atomic</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5847, lng:-101.8481},
+                content:'<h1>The Brewery</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5792, lng:-101.8703},
+                content:'<h1>Skooners Grill and Bar</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5794, lng:-101.8453},
+                content:'<h1>Kongs</h1>'
+            });
+            addMarker({
+                coords:{lat:33.3348, lng:-101.5255},
+                content:'<h1>Lone Star Oyster Bar</h1>'
+            });
+            addMarker({
+                coords:{lat:33.5627, lng:-101.889217},
+                content:'<h1>Caprock Cafe</h1>'
+            });
+            addMarker({
+                coords:{lat:33.58975, lng:-101.8679},
+                content:'<h1>Logies</h1>'
+            });
+            
+
+            function addMarker(props){
+                var marker = new google.maps.Marker({
+                    position:props.coords,
+                    map:map
+                });
+
+                if(props.content){
+                    var infoWindow = new google.maps.InfoWindow({
+                    content:props.content
+                });
+
+                marker.addListener('click', function(){
+                    infoWindow.open(map, marker);
+                });
+                } 
+            }          
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDBSiPR_obaL5eJX3O7VwK_eIVgfsTyP9U&callback=initMap">
+    </script>
+</body>
 </html>
